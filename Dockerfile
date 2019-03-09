@@ -11,7 +11,7 @@ WORKDIR /tmp/ympd/build
 
 RUN cmake .. -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_INSTALL_PREFIX:PATH=/usr \
  && make \
- && make-install
+ && make install
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get remove -q --yes \
     git cmake gcc g++ libmpdclient-dev libssl-dev make ca-certificates \
