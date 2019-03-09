@@ -3,7 +3,7 @@ MAINTAINER @BenjaminHae https://github.com/BenjaminHae
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -q --yes --no-install-recommends \
-    git cmake libmpdclient gcc g++ libmpdclient-dev openssl-dev make
+    git cmake libmpdclient2 gcc g++ libmpdclient-dev openssl-dev make
 
 RUN git clone https://github.com/notandy/ympd.git /tmp/ympd
     
