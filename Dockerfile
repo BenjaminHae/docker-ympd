@@ -7,7 +7,7 @@ RUN apt-get update \
 
 RUN git clone https://github.com/notandy/ympd.git /tmp/ympd
     
-WORKDIR /tmp/ymp
+WORKDIR /tmp/ympd
 
 RUN cmake .. -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_INSTALL_PREFIX:PATH=/usr \
  && make \
