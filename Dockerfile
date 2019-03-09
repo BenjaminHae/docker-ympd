@@ -3,7 +3,7 @@ MAINTAINER @BenjaminHae https://github.com/BenjaminHae
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -q --yes --no-install-recommends \
-    git cmake libmpdclient2 gcc g++ libmpdclient-dev libssl-dev make
+    git cmake libmpdclient2 gcc g++ libmpdclient-dev libssl-dev make ca-certificates 
 
 RUN git clone https://github.com/notandy/ympd.git /tmp/ympd
     
@@ -14,7 +14,7 @@ RUN cmake .. -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_INSTALL_PRE
  && make-install
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get remove -q --yes \
-    git cmake gcc g++ libmpdclient-dev libssl-dev make\
+    git cmake gcc g++ libmpdclient-dev libssl-dev make ca-certificates \
  && apt-get autoremove \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
