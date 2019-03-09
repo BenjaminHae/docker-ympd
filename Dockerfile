@@ -14,7 +14,7 @@ RUN cmake .. -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_INSTALL_PRE
  && make install
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get remove -q --yes \
-    git cmake gcc g++ libmpdclient-dev libssl-dev make ca-certificates \
+    gcc g++ libmpdclient-dev libssl-dev make \
  && apt-get autoremove -q --yes \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
